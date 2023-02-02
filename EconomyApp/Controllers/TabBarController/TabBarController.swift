@@ -25,9 +25,14 @@ class TabBarController: UITabBarController {
         let savingVC = SavingAndAssetsController(nibName: "SavingAndAssetsController", bundle: nil)
         let savingNavVC = UINavigationController(rootViewController: savingVC)
         
-        self.viewControllers = [savingNavVC]
+        let typeVC = TypeSavingController(nibName: "TypeSavingController", bundle: nil)
+        let typeNavVC = UINavigationController(rootViewController: typeVC)
+        
+        self.viewControllers = [savingNavVC, typeNavVC]
         
         savingNavVC.tabBarItem = UITabBarItem(title: "Saving", image: UIImage(systemName: "dollarsign.arrow.circlepath"), tag: 0)
+        typeNavVC.tabBarItem = UITabBarItem(title: "Type", image: UIImage(systemName: "book.circle"), tag: 1)
+        
         
         self.tabBar.barTintColor = UIColor(red: 62/255, green: 64/255, blue: 77/255, alpha: 1)
         self.tabBar.tintColor = .white

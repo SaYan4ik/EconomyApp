@@ -19,6 +19,7 @@
 		A2CE2AE5298C196C0013790B /* SavingAndAssetsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2CE2AE3298C196C0013790B /* SavingAndAssetsController.xib */; };
 		A2CE2AE9298C1A8F0013790B /* TypeSavingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CE2AE7298C1A8F0013790B /* TypeSavingController.swift */; };
 		A2CE2AEA298C1A8F0013790B /* TypeSavingController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2CE2AE8298C1A8F0013790B /* TypeSavingController.xib */; };
+		A2CE2AED298C1B540013790B /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CE2AEC298C1B540013790B /* RealmManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		A2CE2AE3298C196C0013790B /* SavingAndAssetsController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SavingAndAssetsController.xib; sourceTree = "<group>"; };
 		A2CE2AE7298C1A8F0013790B /* TypeSavingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeSavingController.swift; sourceTree = "<group>"; };
 		A2CE2AE8298C1A8F0013790B /* TypeSavingController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TypeSavingController.xib; sourceTree = "<group>"; };
+		A2CE2AEC298C1B540013790B /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 		A2CE2AC8298C164D0013790B /* EconomyApp */ = {
 			isa = PBXGroup;
 			children = (
+				A2CE2AEB298C1B4B0013790B /* RealmManager */,
 				A2CE2ADD298C18F20013790B /* Controllers */,
 				A2CE2AC9298C164D0013790B /* AppDelegate.swift */,
 				A2CE2ACB298C164D0013790B /* SceneDelegate.swift */,
@@ -119,6 +122,14 @@
 				A2CE2AE8298C1A8F0013790B /* TypeSavingController.xib */,
 			);
 			path = TypeSavingController;
+			sourceTree = "<group>";
+		};
+		A2CE2AEB298C1B4B0013790B /* RealmManager */ = {
+			isa = PBXGroup;
+			children = (
+				A2CE2AEC298C1B540013790B /* RealmManager.swift */,
+			);
+			path = RealmManager;
 			sourceTree = "<group>";
 		};
 		CB8085C3FBEAB7628DC2CA32 /* Frameworks */ = {
@@ -260,6 +271,7 @@
 				A2CE2AE4298C196C0013790B /* SavingAndAssetsController.swift in Sources */,
 				A2CE2AE9298C1A8F0013790B /* TypeSavingController.swift in Sources */,
 				A2CE2ACA298C164D0013790B /* AppDelegate.swift in Sources */,
+				A2CE2AED298C1B540013790B /* RealmManager.swift in Sources */,
 				A2CE2ACC298C164D0013790B /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
