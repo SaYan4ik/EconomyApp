@@ -7,6 +7,4 @@ target 'EconomyApp' do
 
   # Pods for EconomyApp
 	pod 'RealmSwift'
-	pod 'Charts'
-	pod 'ChartsRealm'
 end
