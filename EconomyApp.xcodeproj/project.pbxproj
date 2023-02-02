@@ -20,6 +20,13 @@
 		A2CE2AE9298C1A8F0013790B /* TypeSavingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CE2AE7298C1A8F0013790B /* TypeSavingController.swift */; };
 		A2CE2AEA298C1A8F0013790B /* TypeSavingController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2CE2AE8298C1A8F0013790B /* TypeSavingController.xib */; };
 		A2CE2AED298C1B540013790B /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CE2AEC298C1B540013790B /* RealmManager.swift */; };
+		A2CE2AF1298C1CFE0013790B /* AddController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CE2AEF298C1CFE0013790B /* AddController.swift */; };
+		A2CE2AF2298C1CFE0013790B /* AddController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2CE2AF0298C1CFE0013790B /* AddController.xib */; };
+		A2CE2AF6298C214E0013790B /* AddTypeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CE2AF4298C214E0013790B /* AddTypeController.swift */; };
+		A2CE2AF7298C214E0013790B /* AddTypeController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2CE2AF5298C214E0013790B /* AddTypeController.xib */; };
+		A2CE2AFA298C27540013790B /* TypeRealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CE2AF9298C27540013790B /* TypeRealmModel.swift */; };
+		A2CE2AFF298C2B930013790B /* TypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CE2AFD298C2B930013790B /* TypeCell.swift */; };
+		A2CE2B00298C2B930013790B /* TypeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2CE2AFE298C2B930013790B /* TypeCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +47,13 @@
 		A2CE2AE7298C1A8F0013790B /* TypeSavingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeSavingController.swift; sourceTree = "<group>"; };
 		A2CE2AE8298C1A8F0013790B /* TypeSavingController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TypeSavingController.xib; sourceTree = "<group>"; };
 		A2CE2AEC298C1B540013790B /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
+		A2CE2AEF298C1CFE0013790B /* AddController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddController.swift; sourceTree = "<group>"; };
+		A2CE2AF0298C1CFE0013790B /* AddController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddController.xib; sourceTree = "<group>"; };
+		A2CE2AF4298C214E0013790B /* AddTypeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTypeController.swift; sourceTree = "<group>"; };
+		A2CE2AF5298C214E0013790B /* AddTypeController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddTypeController.xib; sourceTree = "<group>"; };
+		A2CE2AF9298C27540013790B /* TypeRealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeRealmModel.swift; sourceTree = "<group>"; };
+		A2CE2AFD298C2B930013790B /* TypeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeCell.swift; sourceTree = "<group>"; };
+		A2CE2AFE298C2B930013790B /* TypeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TypeCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +89,8 @@
 		A2CE2AC8298C164D0013790B /* EconomyApp */ = {
 			isa = PBXGroup;
 			children = (
+				A2CE2AFB298C2B760013790B /* Cells */,
+				A2CE2AF8298C273F0013790B /* Models */,
 				A2CE2AEB298C1B4B0013790B /* RealmManager */,
 				A2CE2ADD298C18F20013790B /* Controllers */,
 				A2CE2AC9298C164D0013790B /* AppDelegate.swift */,
@@ -109,6 +125,7 @@
 		A2CE2AE1298C19360013790B /* SavingAndAssetsController */ = {
 			isa = PBXGroup;
 			children = (
+				A2CE2AEE298C1CF10013790B /* AddController */,
 				A2CE2AE2298C196C0013790B /* SavingAndAssetsController.swift */,
 				A2CE2AE3298C196C0013790B /* SavingAndAssetsController.xib */,
 			);
@@ -118,6 +135,7 @@
 		A2CE2AE6298C1A710013790B /* TypeSavingController */ = {
 			isa = PBXGroup;
 			children = (
+				A2CE2AF3298C212E0013790B /* AddNewTypeController */,
 				A2CE2AE7298C1A8F0013790B /* TypeSavingController.swift */,
 				A2CE2AE8298C1A8F0013790B /* TypeSavingController.xib */,
 			);
@@ -130,6 +148,49 @@
 				A2CE2AEC298C1B540013790B /* RealmManager.swift */,
 			);
 			path = RealmManager;
+			sourceTree = "<group>";
+		};
+		A2CE2AEE298C1CF10013790B /* AddController */ = {
+			isa = PBXGroup;
+			children = (
+				A2CE2AEF298C1CFE0013790B /* AddController.swift */,
+				A2CE2AF0298C1CFE0013790B /* AddController.xib */,
+			);
+			path = AddController;
+			sourceTree = "<group>";
+		};
+		A2CE2AF3298C212E0013790B /* AddNewTypeController */ = {
+			isa = PBXGroup;
+			children = (
+				A2CE2AF4298C214E0013790B /* AddTypeController.swift */,
+				A2CE2AF5298C214E0013790B /* AddTypeController.xib */,
+			);
+			path = AddNewTypeController;
+			sourceTree = "<group>";
+		};
+		A2CE2AF8298C273F0013790B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A2CE2AF9298C27540013790B /* TypeRealmModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A2CE2AFB298C2B760013790B /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				A2CE2AFC298C2B800013790B /* TypeCell */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		A2CE2AFC298C2B800013790B /* TypeCell */ = {
+			isa = PBXGroup;
+			children = (
+				A2CE2AFD298C2B930013790B /* TypeCell.swift */,
+				A2CE2AFE298C2B930013790B /* TypeCell.xib */,
+			);
+			path = TypeCell;
 			sourceTree = "<group>";
 		};
 		CB8085C3FBEAB7628DC2CA32 /* Frameworks */ = {
@@ -211,9 +272,12 @@
 			files = (
 				A2CE2AE5298C196C0013790B /* SavingAndAssetsController.xib in Resources */,
 				A2CE2AD6298C164F0013790B /* LaunchScreen.storyboard in Resources */,
+				A2CE2AF7298C214E0013790B /* AddTypeController.xib in Resources */,
 				A2CE2AD3298C164F0013790B /* Assets.xcassets in Resources */,
+				A2CE2AF2298C1CFE0013790B /* AddController.xib in Resources */,
 				A2CE2AD1298C164D0013790B /* Main.storyboard in Resources */,
 				A2CE2AEA298C1A8F0013790B /* TypeSavingController.xib in Resources */,
+				A2CE2B00298C2B930013790B /* TypeCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,11 +332,15 @@
 			files = (
 				A2CE2ACE298C164D0013790B /* ViewController.swift in Sources */,
 				A2CE2AE0298C190B0013790B /* TabBarController.swift in Sources */,
+				A2CE2AF6298C214E0013790B /* AddTypeController.swift in Sources */,
+				A2CE2AFF298C2B930013790B /* TypeCell.swift in Sources */,
 				A2CE2AE4298C196C0013790B /* SavingAndAssetsController.swift in Sources */,
+				A2CE2AF1298C1CFE0013790B /* AddController.swift in Sources */,
 				A2CE2AE9298C1A8F0013790B /* TypeSavingController.swift in Sources */,
 				A2CE2ACA298C164D0013790B /* AppDelegate.swift in Sources */,
 				A2CE2AED298C1B540013790B /* RealmManager.swift in Sources */,
 				A2CE2ACC298C164D0013790B /* SceneDelegate.swift in Sources */,
+				A2CE2AFA298C27540013790B /* TypeRealmModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
