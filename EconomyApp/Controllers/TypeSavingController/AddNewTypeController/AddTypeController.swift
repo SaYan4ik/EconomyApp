@@ -12,12 +12,16 @@ class AddTypeController: UIViewController {
     @IBOutlet weak var typeOfAssetsOdSavingField: UITextField!
     @IBOutlet weak var savingImageView: UIImageView!
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var saveButton: UIButton!
     
     private var imagesData = ["dollarsign", "eurosign", "rublesign", "yensign", "diamond.circle", "diamond.fill"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.container.layer.cornerRadius = 12
+        self.savingImageView.tintColor = .white
+        saveButton.isEnabled = false
+        configureCollection()
 
     }
     
@@ -29,6 +33,8 @@ class AddTypeController: UIViewController {
     private func configureCollection() {
         collectionView.dataSource = self
         collectionView.delegate = self
+        collectionView.layer.cornerRadius = 12
+        registrationCell()
     }
     
     private func registrationCell() {
@@ -48,14 +54,12 @@ class AddTypeController: UIViewController {
         self.view.layer.insertSublayer(gradientLayer, at:0)
     }
     
-    
-    @IBAction func addImageOfAssetsButton(_ sender: Any) {
-
-    }
-    
-    
     @IBAction func saveAssetsOrSavingButton(_ sender: Any) {
+        guard let nameType = typeOfAssetsOdSavingField.text else { return }
+        guard let image = savingImageView.image else { return }        
+        guard let data = image.jpegData(compressionQuality: 0.9) else { return }
         
+        let type = TypeModel(type: nameType, image: data)
     }
     
 }
@@ -66,12 +70,28 @@ extension AddTypeController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        <#code#>
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TypeCell.id, for: indexPath)
+        guard let typeCell = cell as? TypeCell else { return cell }
+        typeCell.set(nameImage: imagesData[indexPath.item])
+        return typeCell
     }
-    
     
 }
 
 extension AddTypeController: UICollectionViewDelegate {
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.savingImageView.image = UIImage(systemName: imagesData[indexPath.item])
+        self.saveButton.isEnabled = true
+        
+    }
+}
+
+extension AddTypeController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let inset = 9.0
+        guard let screen = view.window?.windowScene?.screen else { return .zero }
+        
+        let width = (screen.bounds.width - (inset * (8))) / 3
+        return CGSize(width: width, height: width)
+    }
 }

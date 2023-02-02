@@ -27,6 +27,9 @@
 		A2CE2AFA298C27540013790B /* TypeRealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CE2AF9298C27540013790B /* TypeRealmModel.swift */; };
 		A2CE2AFF298C2B930013790B /* TypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CE2AFD298C2B930013790B /* TypeCell.swift */; };
 		A2CE2B00298C2B930013790B /* TypeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2CE2AFE298C2B930013790B /* TypeCell.xib */; };
+		A2CE2B04298C30360013790B /* SavingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CE2B02298C30360013790B /* SavingsCell.swift */; };
+		A2CE2B05298C30360013790B /* SavingsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2CE2B03298C30360013790B /* SavingsCell.xib */; };
+		A2CE2B07298C30980013790B /* SavingsRealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CE2B06298C30980013790B /* SavingsRealmModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +57,9 @@
 		A2CE2AF9298C27540013790B /* TypeRealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeRealmModel.swift; sourceTree = "<group>"; };
 		A2CE2AFD298C2B930013790B /* TypeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeCell.swift; sourceTree = "<group>"; };
 		A2CE2AFE298C2B930013790B /* TypeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TypeCell.xib; sourceTree = "<group>"; };
+		A2CE2B02298C30360013790B /* SavingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingsCell.swift; sourceTree = "<group>"; };
+		A2CE2B03298C30360013790B /* SavingsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SavingsCell.xib; sourceTree = "<group>"; };
+		A2CE2B06298C30980013790B /* SavingsRealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingsRealmModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				A2CE2AF9298C27540013790B /* TypeRealmModel.swift */,
+				A2CE2B06298C30980013790B /* SavingsRealmModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -179,6 +186,7 @@
 		A2CE2AFB298C2B760013790B /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				A2CE2B01298C30090013790B /* SavingsCell */,
 				A2CE2AFC298C2B800013790B /* TypeCell */,
 			);
 			path = Cells;
@@ -191,6 +199,15 @@
 				A2CE2AFE298C2B930013790B /* TypeCell.xib */,
 			);
 			path = TypeCell;
+			sourceTree = "<group>";
+		};
+		A2CE2B01298C30090013790B /* SavingsCell */ = {
+			isa = PBXGroup;
+			children = (
+				A2CE2B02298C30360013790B /* SavingsCell.swift */,
+				A2CE2B03298C30360013790B /* SavingsCell.xib */,
+			);
+			path = SavingsCell;
 			sourceTree = "<group>";
 		};
 		CB8085C3FBEAB7628DC2CA32 /* Frameworks */ = {
@@ -277,6 +294,7 @@
 				A2CE2AF2298C1CFE0013790B /* AddController.xib in Resources */,
 				A2CE2AD1298C164D0013790B /* Main.storyboard in Resources */,
 				A2CE2AEA298C1A8F0013790B /* TypeSavingController.xib in Resources */,
+				A2CE2B05298C30360013790B /* SavingsCell.xib in Resources */,
 				A2CE2B00298C2B930013790B /* TypeCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -336,11 +354,13 @@
 				A2CE2AFF298C2B930013790B /* TypeCell.swift in Sources */,
 				A2CE2AE4298C196C0013790B /* SavingAndAssetsController.swift in Sources */,
 				A2CE2AF1298C1CFE0013790B /* AddController.swift in Sources */,
+				A2CE2B07298C30980013790B /* SavingsRealmModel.swift in Sources */,
 				A2CE2AE9298C1A8F0013790B /* TypeSavingController.swift in Sources */,
 				A2CE2ACA298C164D0013790B /* AppDelegate.swift in Sources */,
 				A2CE2AED298C1B540013790B /* RealmManager.swift in Sources */,
 				A2CE2ACC298C164D0013790B /* SceneDelegate.swift in Sources */,
 				A2CE2AFA298C27540013790B /* TypeRealmModel.swift in Sources */,
+				A2CE2B04298C30360013790B /* SavingsCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

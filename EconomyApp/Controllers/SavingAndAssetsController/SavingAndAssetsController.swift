@@ -10,11 +10,14 @@ import UIKit
 class SavingAndAssetsController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavBar()
     }
+    
+//    RealmManager<HistoryRealmModel>().read()
+//    let request = HistoryRealmModel(date: Date.now, statusCode: response.statusCode, requestHist: requestType)
+//    RealmManager<HistoryRealmModel>().write(object: request)
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -42,7 +45,6 @@ class SavingAndAssetsController: UIViewController {
     }
     
     @objc private func addAction(_ sender: UIButton) {
-        //        let nib = String(describing: AddController.self)
         let addVC = AddController(nibName: "AddController", bundle: nil)
         navigationController?.pushViewController(addVC, animated: true)
     }

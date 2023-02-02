@@ -8,15 +8,37 @@
 import UIKit
 
 class TypeSavingController: UIViewController {
-
+    
+    @IBOutlet weak var collectionView: UICollectionView!
+    private var typeAvalableAssets = RealmManager<TypeModel>().read()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavBar()
+        getData()
+        setupCollectionView()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setGradientBackground()
+    }
+    
+    private func getData() {
+        typeAvalableAssets = RealmManager<TypeModel>().read()
+    }
+    
+    private func setupCollectionView() {
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        collectionView.layer.cornerRadius = 12
+        registrationCell()
+    }
+    
+    private func registrationCell() {
+        let nib = UINib(nibName: TypeCell.id, bundle: nil)
+        collectionView.register(nib, forCellWithReuseIdentifier: TypeCell.id)
     }
     
     private func setGradientBackground() {
@@ -32,6 +54,7 @@ class TypeSavingController: UIViewController {
     }
     
     private func setupNavBar() {
+        navigationItem.title = "All type of assets or savings"
         let addButton = UIButton()
         addButton.addTarget(self, action: #selector(addAction), for: .touchUpInside)
         addButton.setImage(UIImage(systemName: "plus.app"), for: .normal)
@@ -43,5 +66,22 @@ class TypeSavingController: UIViewController {
         let addTypeVC = AddTypeController(nibName: "AddTypeController", bundle: nil)
         navigationController?.pushViewController(addTypeVC, animated: true)
     }
+    
+}
+
+
+extension TypeSavingController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return typeAvalableAssets.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        <#code#>
+    }
+    
+    
+}
+
+extension TypeSavingController: UICollectionViewDelegate {
     
 }
