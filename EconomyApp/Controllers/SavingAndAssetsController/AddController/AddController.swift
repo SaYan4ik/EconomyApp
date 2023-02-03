@@ -23,6 +23,7 @@ class AddController: UIViewController {
         self.setupNavBarBackButton()
         setupCollection()
         self.title = "Add new savings"
+        self.container.layer.cornerRadius = 12
         self.saveButton.isEnabled = false
     }
     

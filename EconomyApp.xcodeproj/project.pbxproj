@@ -31,6 +31,7 @@
 		A2CE2B05298C30360013790B /* SavingsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2CE2B03298C30360013790B /* SavingsCell.xib */; };
 		A2CE2B07298C30980013790B /* SavingsRealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CE2B06298C30980013790B /* SavingsRealmModel.swift */; };
 		A2CE2B0A298CF68F0013790B /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CE2B09298CF68F0013790B /* ViewControllerExtension.swift */; };
+		A2CE2B0C298D60040013790B /* CellCollectionFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CE2B0B298D60040013790B /* CellCollectionFlowLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,7 @@
 		A2CE2B03298C30360013790B /* SavingsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SavingsCell.xib; sourceTree = "<group>"; };
 		A2CE2B06298C30980013790B /* SavingsRealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingsRealmModel.swift; sourceTree = "<group>"; };
 		A2CE2B09298CF68F0013790B /* ViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtension.swift; sourceTree = "<group>"; };
+		A2CE2B0B298D60040013790B /* CellCollectionFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellCollectionFlowLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +139,7 @@
 				A2CE2AEE298C1CF10013790B /* AddController */,
 				A2CE2AE2298C196C0013790B /* SavingAndAssetsController.swift */,
 				A2CE2AE3298C196C0013790B /* SavingAndAssetsController.xib */,
+				A2CE2B0B298D60040013790B /* CellCollectionFlowLayout.swift */,
 			);
 			path = SavingAndAssetsController;
 			sourceTree = "<group>";
@@ -359,6 +362,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2CE2B0C298D60040013790B /* CellCollectionFlowLayout.swift in Sources */,
 				A2CE2ACE298C164D0013790B /* ViewController.swift in Sources */,
 				A2CE2AE0298C190B0013790B /* TabBarController.swift in Sources */,
 				A2CE2B0A298CF68F0013790B /* ViewControllerExtension.swift in Sources */,

@@ -10,6 +10,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SavingAndAssetsController" customModule="EconomyApp" customModuleProvider="target">
             <connections>
                 <outlet property="collectionView" destination="NRb-C2-gJM" id="fdN-ie-gJe"/>
+                <outlet property="indicatorView" destination="t2f-uD-19D" id="2LS-ei-laT"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -18,24 +19,37 @@
             <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="NRb-C2-gJM">
-                    <rect key="frame" x="0.0" y="47" width="390" height="763"/>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="NRb-C2-gJM">
+                    <rect key="frame" x="0.0" y="328.66666666666669" width="390" height="200.00000000000006"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="clN-K7-eIX">
+                    <constraints>
+                        <constraint firstAttribute="height" constant="200" id="gG9-M3-rR6"/>
+                    </constraints>
+                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="H7g-Qx-Wo3">
                         <size key="itemSize" width="128" height="128"/>
                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
                 </collectionView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t2f-uD-19D">
+                    <rect key="frame" x="0.0" y="528.66666666666663" width="390" height="50"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="vCp-IJ-lto"/>
+                    </constraints>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" red="0.22191728132011562" green="0.47559580180202021" blue="0.32327295551564972" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
             <constraints>
+                <constraint firstItem="t2f-uD-19D" firstAttribute="top" secondItem="NRb-C2-gJM" secondAttribute="bottom" id="1Z2-Ns-LoH"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="t2f-uD-19D" secondAttribute="trailing" id="1rv-AG-iyZ"/>
+                <constraint firstItem="t2f-uD-19D" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="413-ZO-VBp"/>
                 <constraint firstItem="NRb-C2-gJM" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Gfk-OT-oix"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="NRb-C2-gJM" secondAttribute="trailing" id="Wr9-MB-w9W"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="NRb-C2-gJM" secondAttribute="bottom" id="XJc-Ls-F79"/>
-                <constraint firstItem="NRb-C2-gJM" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="XnR-Oe-FjX"/>
+                <constraint firstItem="NRb-C2-gJM" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="YS2-aR-UxJ"/>
+                <constraint firstItem="NRb-C2-gJM" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="l0Q-Gc-40W"/>
             </constraints>
             <point key="canvasLocation" x="97" y="21"/>
         </view>
