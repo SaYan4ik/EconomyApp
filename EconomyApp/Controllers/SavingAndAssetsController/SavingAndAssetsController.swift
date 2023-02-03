@@ -30,6 +30,7 @@ class SavingAndAssetsController: UIViewController {
         self.collectionView.delegate = self
         collectionView.contentInset = UIEdgeInsets(top: 10, left: 5, bottom: 10, right: 5)
         registrationCell()
+
         
     }
     
@@ -61,11 +62,14 @@ class SavingAndAssetsController: UIViewController {
 
 extension SavingAndAssetsController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        <#code#>
+        return allSavings.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        <#code#>
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SavingsCell.id, for: indexPath)
+        guard let savingsCell = cell as? SavingsCell else { return cell }
+        savingsCell.set(savings: allSavings[indexPath.item])
+        return savingsCell
     }
     
     
@@ -75,4 +79,55 @@ extension SavingAndAssetsController: UICollectionViewDelegate {
     
 }
 
+extension SavingAndAssetsController: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+       
+        let inset = 9.0
+        guard let screen = view.window?.windowScene?.screen else { return .zero }
+        
+        let width = (screen.bounds.width - (inset * (5))) / 3
+        return CGSize(width: width, height: width)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, contextMenuConfigurationForItemAt indexPath: IndexPath, point: CGPoint) -> UIContextMenuConfiguration? {
+        let context = UIContextMenuConfiguration(identifier: nil, previewProvider: nil) { _ in
+
+            let edit = UIAction(title: "Edit",
+                                image: UIImage(systemName: "square.and.pencil"),
+                                identifier: nil,
+                                discoverabilityTitle: nil, state: .off) { (_) in
+                            print("edit button clicked")
+                        }
+            
+            let delete = UIAction(title: "Delete",
+                                  image: UIImage(systemName: "trash"),
+                                  identifier: nil,
+                                  discoverabilityTitle: nil,
+                                  attributes: .destructive,
+                                  state: .off) { (_) in
+                print("delete button clicked")
+
+                RealmManager<SavingsModel>().delete(object: self.allSavings[indexPath.item])
+                self.collectionView.deleteItems(at: [indexPath])
+                self.allSavings = RealmManager<SavingsModel>().read()
+                self.collectionView.reloadData()
+                
+//                RealmManager<TypeModel>().delete(object: self.typeAvalableAssets[indexPath.row])
+//                self.collectionView.deleteItems(at: [indexPath])
+//                self.typeAvalableAssets = RealmManager<TypeModel>().read()
+//                self.collectionView.reloadData()
+                
+            }
+            
+            return UIMenu(title: "Options",
+                          image: nil,
+                          identifier: nil,
+                          options: UIMenu.Options.displayInline,
+                          children: [edit, delete])
+                        
+        }
+        return context
+    }
+}
 
