@@ -17,7 +17,6 @@ class TypeSavingController: UIViewController {
         setupNavBar()
         getData()
         setupCollectionView()
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -28,7 +27,6 @@ class TypeSavingController: UIViewController {
     
     private func getData() {
         self.typeAvalableAssets = RealmManager<TypeModel>().read()
-
     }
     
     private func setupCollectionView() {
@@ -72,6 +70,7 @@ extension TypeSavingController: UICollectionViewDataSource {
         return typeCell
     }
     
+  
     
 }
 
@@ -80,11 +79,33 @@ extension TypeSavingController: UICollectionViewDelegate {
 }
 
 extension TypeSavingController: UICollectionViewDelegateFlowLayout {
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let inset = 9.0
         guard let screen = view.window?.windowScene?.screen else { return .zero }
         
         let width = (screen.bounds.width - (inset * (8))) / 3
         return CGSize(width: width, height: width)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, contextMenuConfigurationForItemsAt indexPaths: [IndexPath], point: CGPoint) -> UIContextMenuConfiguration? {
+        let context = UIContextMenuConfiguration(identifier: nil, previewProvider: nil) { _ in
+
+            let delete = UIAction(title: "Delete",
+                                  image: UIImage(systemName: "trash"),
+                                  identifier: nil,
+                                  discoverabilityTitle: nil,
+                                  attributes: .destructive, state: .off) { (_) in
+                print("delete button clicked")
+            }
+            
+            return UIMenu(title: "Options",
+                          image: nil,
+                          identifier: nil,
+                          options: UIMenu.Options.displayInline,
+                          children: [delete])
+                        
+        }
+        return context
     }
 }

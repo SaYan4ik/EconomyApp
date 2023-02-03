@@ -33,10 +33,17 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vy4-KB-rc4">
+                                <rect key="frame" x="124" y="5" width="24" height="14"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.077402979799999994" green="0.23893229169999999" blue="0.1178656298" alpha="0.5" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
+                            <constraint firstItem="Vy4-KB-rc4" firstAttribute="top" secondItem="adY-Jn-gYk" secondAttribute="top" constant="5" id="6lI-F3-6De"/>
                             <constraint firstItem="RYf-Q9-Hjg" firstAttribute="centerX" secondItem="dzG-pb-zRY" secondAttribute="centerX" id="80M-fB-PRZ"/>
+                            <constraint firstAttribute="trailing" secondItem="Vy4-KB-rc4" secondAttribute="trailing" constant="5" id="Emq-Fy-8Wq"/>
                             <constraint firstItem="RYf-Q9-Hjg" firstAttribute="top" secondItem="dzG-pb-zRY" secondAttribute="bottom" constant="5" id="ZKG-Ry-C2I"/>
                             <constraint firstItem="dzG-pb-zRY" firstAttribute="centerX" secondItem="adY-Jn-gYk" secondAttribute="centerX" id="eDm-GY-2Qa"/>
                             <constraint firstItem="dzG-pb-zRY" firstAttribute="centerY" secondItem="adY-Jn-gYk" secondAttribute="centerY" id="rkN-r4-NNA"/>

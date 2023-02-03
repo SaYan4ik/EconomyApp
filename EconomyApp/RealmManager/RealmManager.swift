@@ -18,7 +18,16 @@ class RealmManager<T> where T: Object {
         }
     }
     
+    func update(realmBlock: @escaping (Realm) -> Void) {
+        realmBlock(self.realm)
+    }
+    
     func read() -> [T] {
         return Array(realm.objects(T.self))
     }
-}
+    
+    func delete(object: T) {
+        try? realm.write {
+            realm.delete(object)
+        }
+    }
