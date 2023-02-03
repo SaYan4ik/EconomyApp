@@ -15,25 +15,9 @@ class SavingAndAssetsController: UIViewController {
         setupNavBar()
     }
     
-//    RealmManager<HistoryRealmModel>().read()
-//    let request = HistoryRealmModel(date: Date.now, statusCode: response.statusCode, requestHist: requestType)
-//    RealmManager<HistoryRealmModel>().write(object: request)
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        setGradientBackground()
-    }
-    
-    private func setGradientBackground() {
-        let colorTop =  UIColor(red: 57/255.0, green: 121/255.0, blue: 82/255.0, alpha: 1.0).cgColor
-        let colorBottom = UIColor(red: 0/255.0, green: 0/255.0, blue: 0/255.0, alpha: 1.0).cgColor
-        
-        let gradientLayer = CAGradientLayer()
-        gradientLayer.colors = [colorTop, colorBottom]
-        gradientLayer.locations = [0.0, 0.4]
-        gradientLayer.frame = self.view.bounds
-        
-        self.view.layer.insertSublayer(gradientLayer, at:0)
+        self.setGradientBackground()
     }
     
     private func setupNavBar() {
@@ -48,6 +32,5 @@ class SavingAndAssetsController: UIViewController {
         let addVC = AddController(nibName: "AddController", bundle: nil)
         navigationController?.pushViewController(addVC, animated: true)
     }
-    
     
 }

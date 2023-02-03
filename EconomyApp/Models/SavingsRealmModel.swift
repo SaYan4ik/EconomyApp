@@ -9,15 +9,14 @@ import Foundation
 import RealmSwift
 
 
-class SavingsRealmModel: Object {
+class SavingsModel: Object {
     @objc dynamic var currency: String = ""
-    @objc dynamic var type: String = ""
-    @objc dynamic var image: Data?
+    @objc dynamic var typeValue: TypeModel?
     
-    convenience init(currency: String, type: String, image: Data) {
+    convenience init(currency: String, typeValue: TypeModel) {
         self.init()
-        self.type = type
-        self.image = image
+        self.currency = currency
+        self.typeValue = typeValue
     }
     
 }

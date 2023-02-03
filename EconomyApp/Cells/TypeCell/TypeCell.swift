@@ -20,7 +20,6 @@ class TypeCell: UICollectionViewCell {
     }
 
     func set(nameImage: String?, typeModel: TypeModel?) {
-//        self.typeImageView.image = UIImage(systemName: nameImage ?? "")
         self.typeImageView.image = UIImage(named: nameImage ?? "")
         self.container.layer.cornerRadius = 12
         

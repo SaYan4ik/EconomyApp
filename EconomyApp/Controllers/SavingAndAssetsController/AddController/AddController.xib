@@ -9,6 +9,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddController" customModule="EconomyApp" customModuleProvider="target">
             <connections>
+                <outlet property="collectionView" destination="JPV-SP-gwf" id="q0h-AI-cLC"/>
+                <outlet property="container" destination="Cb3-Yc-mzN" id="LqO-zf-J4B"/>
+                <outlet property="saveButton" destination="VJH-cV-pCF" id="4bE-P3-PJJ"/>
+                <outlet property="savingsAmountField" destination="biA-9o-ZBd" id="g59-V3-LrU"/>
+                <outlet property="typeImageView" destination="hSs-YO-Y2w" id="mMw-rK-5U9"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -16,9 +21,80 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="JPV-SP-gwf">
+                    <rect key="frame" x="16" y="233" width="358" height="561"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="3Lo-KO-EhJ">
+                        <size key="itemSize" width="128" height="128"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cb3-Yc-mzN">
+                    <rect key="frame" x="16" y="63" width="358" height="154"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Savings amount" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Ig-Jv-74i">
+                            <rect key="frame" x="16" y="16" width="326" height="21"/>
+                            <fontDescription key="fontDescription" name="Charter-Black" family="Charter" pointSize="17"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Savings amount" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="biA-9o-ZBd">
+                            <rect key="frame" x="16" y="53" width="260" height="34"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VJH-cV-pCF">
+                            <rect key="frame" x="16" y="103" width="326" height="35"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title="Save">
+                                <fontDescription key="titleFontDescription" name="Charter-Black" family="Charter" pointSize="17"/>
+                            </buttonConfiguration>
+                            <connections>
+                                <action selector="saveButtondidTap:" destination="-1" eventType="touchUpInside" id="nnM-QR-0D3"/>
+                            </connections>
+                        </button>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hSs-YO-Y2w">
+                            <rect key="frame" x="292" y="45" width="50" height="50"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="D2S-xE-GVH"/>
+                                <constraint firstAttribute="width" constant="50" id="KeH-v2-PzH"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" red="0.077402979799999994" green="0.23893229169999999" blue="0.1178656298" alpha="0.30181601819999998" colorSpace="custom" customColorSpace="displayP3"/>
+                    <constraints>
+                        <constraint firstItem="hSs-YO-Y2w" firstAttribute="leading" secondItem="biA-9o-ZBd" secondAttribute="trailing" constant="16" id="3s5-Rb-g3m"/>
+                        <constraint firstItem="biA-9o-ZBd" firstAttribute="leading" secondItem="Cb3-Yc-mzN" secondAttribute="leading" constant="16" id="9oS-04-NKu"/>
+                        <constraint firstAttribute="trailing" secondItem="7Ig-Jv-74i" secondAttribute="trailing" constant="16" id="GQy-hd-bjC"/>
+                        <constraint firstItem="biA-9o-ZBd" firstAttribute="top" secondItem="7Ig-Jv-74i" secondAttribute="bottom" constant="16" id="IjR-Od-FBW"/>
+                        <constraint firstAttribute="trailing" secondItem="hSs-YO-Y2w" secondAttribute="trailing" constant="16" id="JD6-zS-nar"/>
+                        <constraint firstItem="hSs-YO-Y2w" firstAttribute="centerY" secondItem="biA-9o-ZBd" secondAttribute="centerY" id="JtA-xr-Tn0"/>
+                        <constraint firstItem="VJH-cV-pCF" firstAttribute="leading" secondItem="Cb3-Yc-mzN" secondAttribute="leading" constant="16" id="O1x-7j-wYb"/>
+                        <constraint firstItem="7Ig-Jv-74i" firstAttribute="top" secondItem="Cb3-Yc-mzN" secondAttribute="top" constant="16" id="bWA-P7-zOr"/>
+                        <constraint firstAttribute="bottom" secondItem="VJH-cV-pCF" secondAttribute="bottom" constant="16" id="jQD-ZT-nVs"/>
+                        <constraint firstItem="VJH-cV-pCF" firstAttribute="top" secondItem="biA-9o-ZBd" secondAttribute="bottom" constant="16" id="lzx-R5-ZHA"/>
+                        <constraint firstAttribute="trailing" secondItem="VJH-cV-pCF" secondAttribute="trailing" constant="16" id="y43-qG-Eis"/>
+                        <constraint firstItem="7Ig-Jv-74i" firstAttribute="leading" secondItem="Cb3-Yc-mzN" secondAttribute="leading" constant="16" id="ygO-xe-5J6"/>
+                    </constraints>
+                </view>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" red="0.22191728129999999" green="0.4755958018" blue="0.32327295550000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-            <point key="canvasLocation" x="118" y="21"/>
+            <constraints>
+                <constraint firstItem="Cb3-Yc-mzN" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="0kQ-gd-Wst"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Cb3-Yc-mzN" secondAttribute="trailing" constant="16" id="8kb-WO-Jkh"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="JPV-SP-gwf" secondAttribute="bottom" constant="16" id="M7o-Zr-mBo"/>
+                <constraint firstItem="JPV-SP-gwf" firstAttribute="top" secondItem="Cb3-Yc-mzN" secondAttribute="bottom" constant="16" id="UhP-B0-iBm"/>
+                <constraint firstItem="Cb3-Yc-mzN" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="16" id="Xpy-dn-O8b"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="JPV-SP-gwf" secondAttribute="trailing" constant="16" id="d8D-6w-ffu"/>
+                <constraint firstItem="JPV-SP-gwf" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="dh9-eo-dcL"/>
+            </constraints>
+            <point key="canvasLocation" x="116.92307692307692" y="20.616113744075829"/>
         </view>
     </objects>
 </document>

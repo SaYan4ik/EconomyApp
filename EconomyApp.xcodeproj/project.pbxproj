@@ -30,6 +30,7 @@
 		A2CE2B04298C30360013790B /* SavingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CE2B02298C30360013790B /* SavingsCell.swift */; };
 		A2CE2B05298C30360013790B /* SavingsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2CE2B03298C30360013790B /* SavingsCell.xib */; };
 		A2CE2B07298C30980013790B /* SavingsRealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CE2B06298C30980013790B /* SavingsRealmModel.swift */; };
+		A2CE2B0A298CF68F0013790B /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CE2B09298CF68F0013790B /* ViewControllerExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		A2CE2B02298C30360013790B /* SavingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingsCell.swift; sourceTree = "<group>"; };
 		A2CE2B03298C30360013790B /* SavingsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SavingsCell.xib; sourceTree = "<group>"; };
 		A2CE2B06298C30980013790B /* SavingsRealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingsRealmModel.swift; sourceTree = "<group>"; };
+		A2CE2B09298CF68F0013790B /* ViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 		A2CE2AC8298C164D0013790B /* EconomyApp */ = {
 			isa = PBXGroup;
 			children = (
+				A2CE2B08298CF67B0013790B /* Extensions */,
 				A2CE2AFB298C2B760013790B /* Cells */,
 				A2CE2AF8298C273F0013790B /* Models */,
 				A2CE2AEB298C1B4B0013790B /* RealmManager */,
@@ -208,6 +211,14 @@
 				A2CE2B03298C30360013790B /* SavingsCell.xib */,
 			);
 			path = SavingsCell;
+			sourceTree = "<group>";
+		};
+		A2CE2B08298CF67B0013790B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A2CE2B09298CF68F0013790B /* ViewControllerExtension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		CB8085C3FBEAB7628DC2CA32 /* Frameworks */ = {
@@ -350,6 +361,7 @@
 			files = (
 				A2CE2ACE298C164D0013790B /* ViewController.swift in Sources */,
 				A2CE2AE0298C190B0013790B /* TabBarController.swift in Sources */,
+				A2CE2B0A298CF68F0013790B /* ViewControllerExtension.swift in Sources */,
 				A2CE2AF6298C214E0013790B /* AddTypeController.swift in Sources */,
 				A2CE2AFF298C2B930013790B /* TypeCell.swift in Sources */,
 				A2CE2AE4298C196C0013790B /* SavingAndAssetsController.swift in Sources */,

@@ -22,12 +22,23 @@ class AddTypeController: UIViewController {
         self.savingImageView.tintColor = .white
         saveButton.isEnabled = false
         configureCollection()
+        self.setupNavBarBackButton()
 
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        setGradientBackground()
+        self.setGradientBackground()
+        self.collectionView.reloadData()
+    }
+
+    @IBAction func saveAssetsOrSavingButton(_ sender: Any) {
+        guard let nameType = typeOfAssetsOdSavingField.text else { return }
+        guard let image = savingImageView.image else { return }        
+        guard let data = image.pngData() else { return }
+        
+        let type = TypeModel(type: nameType, image: data)
+        RealmManager<TypeModel>().write(object: type)
     }
     
     private func configureCollection() {
@@ -40,27 +51,6 @@ class AddTypeController: UIViewController {
     private func registrationCell() {
         let nib = UINib(nibName: TypeCell.id, bundle: nil)
         collectionView.register(nib, forCellWithReuseIdentifier: TypeCell.id)
-    }
-    
-    private func setGradientBackground() {
-        let colorTop =  UIColor(red: 57/255.0, green: 121/255.0, blue: 82/255.0, alpha: 1.0).cgColor
-        let colorBottom = UIColor(red: 0/255.0, green: 0/255.0, blue: 0/255.0, alpha: 1.0).cgColor
-        
-        let gradientLayer = CAGradientLayer()
-        gradientLayer.colors = [colorTop, colorBottom]
-        gradientLayer.locations = [0.0, 0.4]
-        gradientLayer.frame = self.view.bounds
-        
-        self.view.layer.insertSublayer(gradientLayer, at:0)
-    }
-    
-    @IBAction func saveAssetsOrSavingButton(_ sender: Any) {
-        guard let nameType = typeOfAssetsOdSavingField.text else { return }
-        guard let image = savingImageView.image else { return }        
-        guard let data = image.pngData() else { return }
-        
-        let type = TypeModel(type: nameType, image: data)
-        RealmManager<TypeModel>().write(object: type)
     }
     
 }
@@ -81,7 +71,6 @@ extension AddTypeController: UICollectionViewDataSource {
 
 extension AddTypeController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        self.savingImageView.image = UIImage(systemName: imagesData[indexPath.item])
         self.savingImageView.image = UIImage(named: imagesData[indexPath.item])
         self.saveButton.isEnabled = true
         

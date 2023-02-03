@@ -8,13 +8,9 @@
 import UIKit
 
 class TypeSavingController: UIViewController {
-    
     @IBOutlet weak var collectionView: UICollectionView!
-    private var typeAvalableAssets = RealmManager<TypeModel>().read() {
-        didSet {
-            collectionView.reloadData()
-        }
-    }
+    
+    private var typeAvalableAssets = RealmManager<TypeModel>().read()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,11 +22,13 @@ class TypeSavingController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        setGradientBackground()
+        self.setGradientBackground()
+        self.collectionView.reloadData()
     }
     
     private func getData() {
-        typeAvalableAssets = RealmManager<TypeModel>().read()
+        self.typeAvalableAssets = RealmManager<TypeModel>().read()
+
     }
     
     private func setupCollectionView() {
@@ -43,18 +41,6 @@ class TypeSavingController: UIViewController {
     private func registrationCell() {
         let nib = UINib(nibName: TypeCell.id, bundle: nil)
         collectionView.register(nib, forCellWithReuseIdentifier: TypeCell.id)
-    }
-    
-    private func setGradientBackground() {
-        let colorTop =  UIColor(red: 57/255.0, green: 121/255.0, blue: 82/255.0, alpha: 1.0).cgColor
-        let colorBottom = UIColor(red: 0/255.0, green: 0/255.0, blue: 0/255.0, alpha: 1.0).cgColor
-        
-        let gradientLayer = CAGradientLayer()
-        gradientLayer.colors = [colorTop, colorBottom]
-        gradientLayer.locations = [0.0, 0.4]
-        gradientLayer.frame = self.view.bounds
-        
-        self.view.layer.insertSublayer(gradientLayer, at:0)
     }
     
     private func setupNavBar() {
@@ -91,4 +77,14 @@ extension TypeSavingController: UICollectionViewDataSource {
 
 extension TypeSavingController: UICollectionViewDelegate {
     
+}
+
+extension TypeSavingController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let inset = 9.0
+        guard let screen = view.window?.windowScene?.screen else { return .zero }
+        
+        let width = (screen.bounds.width - (inset * (8))) / 3
+        return CGSize(width: width, height: width)
+    }
 }
