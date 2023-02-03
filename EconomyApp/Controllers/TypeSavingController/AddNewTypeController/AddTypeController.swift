@@ -14,7 +14,7 @@ class AddTypeController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var saveButton: UIButton!
     
-    private var imagesData = ["dollarsign", "eurosign", "rublesign", "yensign", "diamond.circle", "diamond.fill"]
+    private var imagesData = ["Dollar", "Euro", "Ruble", "Peso", "Bitcoin", "Swiss franc", "Metal", "Gem"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,9 +57,10 @@ class AddTypeController: UIViewController {
     @IBAction func saveAssetsOrSavingButton(_ sender: Any) {
         guard let nameType = typeOfAssetsOdSavingField.text else { return }
         guard let image = savingImageView.image else { return }        
-        guard let data = image.jpegData(compressionQuality: 0.9) else { return }
+        guard let data = image.pngData() else { return }
         
         let type = TypeModel(type: nameType, image: data)
+        RealmManager<TypeModel>().write(object: type)
     }
     
 }
@@ -72,7 +73,7 @@ extension AddTypeController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TypeCell.id, for: indexPath)
         guard let typeCell = cell as? TypeCell else { return cell }
-        typeCell.set(nameImage: imagesData[indexPath.item])
+        typeCell.set(nameImage: imagesData[indexPath.item], typeModel: nil)
         return typeCell
     }
     
@@ -80,7 +81,8 @@ extension AddTypeController: UICollectionViewDataSource {
 
 extension AddTypeController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.savingImageView.image = UIImage(systemName: imagesData[indexPath.item])
+//        self.savingImageView.image = UIImage(systemName: imagesData[indexPath.item])
+        self.savingImageView.image = UIImage(named: imagesData[indexPath.item])
         self.saveButton.isEnabled = true
         
     }

@@ -10,7 +10,11 @@ import UIKit
 class TypeSavingController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
-    private var typeAvalableAssets = RealmManager<TypeModel>().read()
+    private var typeAvalableAssets = RealmManager<TypeModel>().read() {
+        didSet {
+            collectionView.reloadData()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -76,7 +80,10 @@ extension TypeSavingController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        <#code#>
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TypeCell.id, for: indexPath)
+        guard let typeCell = cell as? TypeCell else { return cell }
+        typeCell.set(nameImage: nil, typeModel: typeAvalableAssets[indexPath.item])
+        return typeCell
     }
     
     
