@@ -15,13 +15,13 @@ class TypeSavingController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavBar()
-        getData()
         setupCollectionView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.setGradientBackground()
+        getData()
         self.collectionView.reloadData()
     }
     
@@ -33,6 +33,7 @@ class TypeSavingController: UIViewController {
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.layer.cornerRadius = 12
+        collectionView.contentInset = UIEdgeInsets(top: 10, left: 5, bottom: 10, right: 5)
         registrationCell()
     }
     
@@ -42,12 +43,16 @@ class TypeSavingController: UIViewController {
     }
     
     private func setupNavBar() {
-        navigationItem.title = "All type of assets or savings"
+        
+        
+        
         let addButton = UIButton()
         addButton.addTarget(self, action: #selector(addAction), for: .touchUpInside)
         addButton.setImage(UIImage(systemName: "plus.app"), for: .normal)
         addButton.tintColor = .white
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: addButton)
+        navigationItem.title = "All type of assets or savings"
+
     }
     
     @objc private func addAction(_ sender: UIButton) {
@@ -88,22 +93,36 @@ extension TypeSavingController: UICollectionViewDelegateFlowLayout {
         return CGSize(width: width, height: width)
     }
     
-    func collectionView(_ collectionView: UICollectionView, contextMenuConfigurationForItemsAt indexPaths: [IndexPath], point: CGPoint) -> UIContextMenuConfiguration? {
+    func collectionView(_ collectionView: UICollectionView, contextMenuConfigurationForItemAt indexPath: IndexPath, point: CGPoint) -> UIContextMenuConfiguration? {
         let context = UIContextMenuConfiguration(identifier: nil, previewProvider: nil) { _ in
 
+            let edit = UIAction(title: "Edit",
+                                image: UIImage(systemName: "square.and.pencil"),
+                                identifier: nil,
+                                discoverabilityTitle: nil, state: .off) { (_) in
+                            print("edit button clicked")
+                        }
+            
             let delete = UIAction(title: "Delete",
                                   image: UIImage(systemName: "trash"),
                                   identifier: nil,
                                   discoverabilityTitle: nil,
-                                  attributes: .destructive, state: .off) { (_) in
+                                  attributes: .destructive,
+                                  state: .off) { (_) in
                 print("delete button clicked")
+
+                RealmManager<TypeModel>().delete(object: self.typeAvalableAssets[indexPath.row])
+                self.collectionView.deleteItems(at: [indexPath])
+                self.typeAvalableAssets = RealmManager<TypeModel>().read()
+                self.collectionView.reloadData()
+                
             }
             
             return UIMenu(title: "Options",
                           image: nil,
                           identifier: nil,
                           options: UIMenu.Options.displayInline,
-                          children: [delete])
+                          children: [edit, delete])
                         
         }
         return context

@@ -10,11 +10,12 @@ import UIKit
 
 extension UIViewController {
     func setupNavBarBackButton() {
-           let button = UIButton()
-           button.addTarget(self, action: #selector(backAction), for: .touchUpInside)
-           button.setImage(UIImage(systemName: "chevron.left"), for: .normal)
-           button.tintColor = .white
-           navigationItem.leftBarButtonItem = UIBarButtonItem(customView: button)
+        let button = UIButton()
+        button.addTarget(self, action: #selector(backAction), for: .touchUpInside)
+        button.setImage(UIImage(systemName: "chevron.left"), for: .normal)
+        button.tintColor = .white
+        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: button)
+        navigationItem.titleView?.tintColor = .white
        }
        
     @objc private func backAction(_ sender: Any) {

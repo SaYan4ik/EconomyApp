@@ -31,3 +31,4 @@ class RealmManager<T> where T: Object {
             realm.delete(object)
         }
     }
+}
