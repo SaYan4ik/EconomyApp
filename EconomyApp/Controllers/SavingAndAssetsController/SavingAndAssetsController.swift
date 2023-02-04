@@ -37,7 +37,6 @@ class SavingAndAssetsController: UIViewController {
     private func setupCollection() {
         self.collectionView.dataSource = self
         self.collectionView.delegate = self
-//        collectionView.contentInset = UIEdgeInsets(top: 10, left: 5, bottom: 10, right: 5)
         collectionView.collectionViewLayout = CellCollectionFlowLayout()
         registrationCell()
 
@@ -197,26 +196,34 @@ extension SavingAndAssetsController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, contextMenuConfigurationForItemAt indexPath: IndexPath, point: CGPoint) -> UIContextMenuConfiguration? {
         let context = UIContextMenuConfiguration(identifier: nil, previewProvider: nil) { _ in
 
-            let edit = UIAction(title: "Edit",
-                                image: UIImage(systemName: "square.and.pencil"),
-                                identifier: nil,
-                                discoverabilityTitle: nil, state: .off) { (_) in
-                            print("edit button clicked")
-                        }
+            let edit = UIAction(
+                title: "Edit",
+                image: UIImage(systemName: "square.and.pencil"),
+                identifier: nil,
+                discoverabilityTitle: nil, state: .off) { [weak self] (_) in
+                    guard let self else { return }
+                    print("edit button clicked")
+                    let nib = String(describing: AddController.self)
+                    let editVC = AddController(nibName: nib, bundle: nil)
+                    editVC.set(savings: self.allSavings[indexPath.row], type: .edit)
+                    self.navigationController?.pushViewController(editVC, animated: true)
+                
+            }
             
-            let delete = UIAction(title: "Delete",
-                                  image: UIImage(systemName: "trash"),
-                                  identifier: nil,
-                                  discoverabilityTitle: nil,
-                                  attributes: .destructive,
-                                  state: .off) { (_) in
-                print("delete button clicked")
+            let delete = UIAction(
+                title: "Delete",
+                image: UIImage(systemName: "trash"),
+                identifier: nil,
+                discoverabilityTitle: nil,
+                attributes: .destructive,
+                state: .off) { [weak self] (_) in
+                    print("delete button clicked")
+                    guard let self else { return }
 
                 RealmManager<SavingsModel>().delete(object: self.allSavings[indexPath.item])
                 self.collectionView.deleteItems(at: [indexPath])
                 self.allSavings = RealmManager<SavingsModel>().read()
                 self.collectionView.reloadData()
-                
             }
             
             return UIMenu(title: "Options",

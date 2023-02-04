@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		82A30F0D180F5F91AA17E515 /* Pods_EconomyApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D1F7C0CC78BB8B8C1D286D0 /* Pods_EconomyApp.framework */; };
+		A258B0FC298E4FCD0003E712 /* TypeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = A258B0FB298E4FCD0003E712 /* TypeEnum.swift */; };
+		A258B0FE298E6F360003E712 /* OptionalExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A258B0FD298E6F360003E712 /* OptionalExtension.swift */; };
 		A2CE2ACA298C164D0013790B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CE2AC9298C164D0013790B /* AppDelegate.swift */; };
 		A2CE2ACC298C164D0013790B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CE2ACB298C164D0013790B /* SceneDelegate.swift */; };
 		A2CE2ACE298C164D0013790B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CE2ACD298C164D0013790B /* ViewController.swift */; };
@@ -38,6 +40,8 @@
 		50ECE0AD19AAF02BC5664B01 /* Pods-EconomyApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EconomyApp.debug.xcconfig"; path = "Target Support Files/Pods-EconomyApp/Pods-EconomyApp.debug.xcconfig"; sourceTree = "<group>"; };
 		5D1F7C0CC78BB8B8C1D286D0 /* Pods_EconomyApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EconomyApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F0F8E44CED04B60E69C086F /* Pods-EconomyApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EconomyApp.release.xcconfig"; path = "Target Support Files/Pods-EconomyApp/Pods-EconomyApp.release.xcconfig"; sourceTree = "<group>"; };
+		A258B0FB298E4FCD0003E712 /* TypeEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeEnum.swift; sourceTree = "<group>"; };
+		A258B0FD298E6F360003E712 /* OptionalExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalExtension.swift; sourceTree = "<group>"; };
 		A2CE2AC6298C164D0013790B /* EconomyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EconomyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2CE2AC9298C164D0013790B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A2CE2ACB298C164D0013790B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -78,6 +82,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A258B0F8298E4FB60003E712 /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				A258B0FB298E4FCD0003E712 /* TypeEnum.swift */,
+			);
+			path = Enum;
+			sourceTree = "<group>";
+		};
+		A29315A6298E4A1A007A6C4E /* CollectionViewFlowLayout */ = {
+			isa = PBXGroup;
+			children = (
+				A2CE2B0B298D60040013790B /* CellCollectionFlowLayout.swift */,
+			);
+			path = CollectionViewFlowLayout;
+			sourceTree = "<group>";
+		};
 		A2CE2ABD298C164D0013790B = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +119,7 @@
 		A2CE2AC8298C164D0013790B /* EconomyApp */ = {
 			isa = PBXGroup;
 			children = (
+				A258B0F8298E4FB60003E712 /* Enum */,
 				A2CE2B08298CF67B0013790B /* Extensions */,
 				A2CE2AFB298C2B760013790B /* Cells */,
 				A2CE2AF8298C273F0013790B /* Models */,
@@ -136,10 +157,10 @@
 		A2CE2AE1298C19360013790B /* SavingAndAssetsController */ = {
 			isa = PBXGroup;
 			children = (
+				A29315A6298E4A1A007A6C4E /* CollectionViewFlowLayout */,
 				A2CE2AEE298C1CF10013790B /* AddController */,
 				A2CE2AE2298C196C0013790B /* SavingAndAssetsController.swift */,
 				A2CE2AE3298C196C0013790B /* SavingAndAssetsController.xib */,
-				A2CE2B0B298D60040013790B /* CellCollectionFlowLayout.swift */,
 			);
 			path = SavingAndAssetsController;
 			sourceTree = "<group>";
@@ -220,6 +241,7 @@
 			isa = PBXGroup;
 			children = (
 				A2CE2B09298CF68F0013790B /* ViewControllerExtension.swift */,
+				A258B0FD298E6F360003E712 /* OptionalExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -362,6 +384,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A258B0FC298E4FCD0003E712 /* TypeEnum.swift in Sources */,
 				A2CE2B0C298D60040013790B /* CellCollectionFlowLayout.swift in Sources */,
 				A2CE2ACE298C164D0013790B /* ViewController.swift in Sources */,
 				A2CE2AE0298C190B0013790B /* TabBarController.swift in Sources */,
@@ -375,6 +398,7 @@
 				A2CE2ACA298C164D0013790B /* AppDelegate.swift in Sources */,
 				A2CE2AED298C1B540013790B /* RealmManager.swift in Sources */,
 				A2CE2ACC298C164D0013790B /* SceneDelegate.swift in Sources */,
+				A258B0FE298E6F360003E712 /* OptionalExtension.swift in Sources */,
 				A2CE2AFA298C27540013790B /* TypeRealmModel.swift in Sources */,
 				A2CE2B04298C30360013790B /* SavingsCell.swift in Sources */,
 			);

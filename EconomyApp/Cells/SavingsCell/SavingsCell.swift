@@ -32,5 +32,4 @@ class SavingsCell: UICollectionViewCell {
         self.typeLabel.text = type
         self.container.layer.cornerRadius = 12
     }
-
 }
