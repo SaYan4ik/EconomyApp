@@ -10,6 +10,8 @@
 		82A30F0D180F5F91AA17E515 /* Pods_EconomyApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D1F7C0CC78BB8B8C1D286D0 /* Pods_EconomyApp.framework */; };
 		A258B0FC298E4FCD0003E712 /* TypeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = A258B0FB298E4FCD0003E712 /* TypeEnum.swift */; };
 		A258B0FE298E6F360003E712 /* OptionalExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A258B0FD298E6F360003E712 /* OptionalExtension.swift */; };
+		A258B102298E7BAB0003E712 /* ChartController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A258B100298E7BAB0003E712 /* ChartController.swift */; };
+		A258B103298E7BAB0003E712 /* ChartController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A258B101298E7BAB0003E712 /* ChartController.xib */; };
 		A2CE2ACA298C164D0013790B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CE2AC9298C164D0013790B /* AppDelegate.swift */; };
 		A2CE2ACC298C164D0013790B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CE2ACB298C164D0013790B /* SceneDelegate.swift */; };
 		A2CE2ACE298C164D0013790B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CE2ACD298C164D0013790B /* ViewController.swift */; };
@@ -42,6 +44,8 @@
 		5F0F8E44CED04B60E69C086F /* Pods-EconomyApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EconomyApp.release.xcconfig"; path = "Target Support Files/Pods-EconomyApp/Pods-EconomyApp.release.xcconfig"; sourceTree = "<group>"; };
 		A258B0FB298E4FCD0003E712 /* TypeEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeEnum.swift; sourceTree = "<group>"; };
 		A258B0FD298E6F360003E712 /* OptionalExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalExtension.swift; sourceTree = "<group>"; };
+		A258B100298E7BAB0003E712 /* ChartController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartController.swift; sourceTree = "<group>"; };
+		A258B101298E7BAB0003E712 /* ChartController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChartController.xib; sourceTree = "<group>"; };
 		A2CE2AC6298C164D0013790B /* EconomyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EconomyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2CE2AC9298C164D0013790B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A2CE2ACB298C164D0013790B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -88,6 +92,15 @@
 				A258B0FB298E4FCD0003E712 /* TypeEnum.swift */,
 			);
 			path = Enum;
+			sourceTree = "<group>";
+		};
+		A258B0FF298E79ED0003E712 /* ChartController */ = {
+			isa = PBXGroup;
+			children = (
+				A258B100298E7BAB0003E712 /* ChartController.swift */,
+				A258B101298E7BAB0003E712 /* ChartController.xib */,
+			);
+			path = ChartController;
 			sourceTree = "<group>";
 		};
 		A29315A6298E4A1A007A6C4E /* CollectionViewFlowLayout */ = {
@@ -139,6 +152,7 @@
 		A2CE2ADD298C18F20013790B /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				A258B0FF298E79ED0003E712 /* ChartController */,
 				A2CE2AE6298C1A710013790B /* TypeSavingController */,
 				A2CE2AE1298C19360013790B /* SavingAndAssetsController */,
 				A2CE2ADE298C18F70013790B /* TabBarController */,
@@ -327,6 +341,7 @@
 				A2CE2AD6298C164F0013790B /* LaunchScreen.storyboard in Resources */,
 				A2CE2AF7298C214E0013790B /* AddTypeController.xib in Resources */,
 				A2CE2AD3298C164F0013790B /* Assets.xcassets in Resources */,
+				A258B103298E7BAB0003E712 /* ChartController.xib in Resources */,
 				A2CE2AF2298C1CFE0013790B /* AddController.xib in Resources */,
 				A2CE2AD1298C164D0013790B /* Main.storyboard in Resources */,
 				A2CE2AEA298C1A8F0013790B /* TypeSavingController.xib in Resources */,
@@ -390,6 +405,7 @@
 				A2CE2AE0298C190B0013790B /* TabBarController.swift in Sources */,
 				A2CE2B0A298CF68F0013790B /* ViewControllerExtension.swift in Sources */,
 				A2CE2AF6298C214E0013790B /* AddTypeController.swift in Sources */,
+				A258B102298E7BAB0003E712 /* ChartController.swift in Sources */,
 				A2CE2AFF298C2B930013790B /* TypeCell.swift in Sources */,
 				A2CE2AE4298C196C0013790B /* SavingAndAssetsController.swift in Sources */,
 				A2CE2AF1298C1CFE0013790B /* AddController.swift in Sources */,
@@ -548,6 +564,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = W25G72CSZW;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = EconomyApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -576,6 +593,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = W25G72CSZW;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = EconomyApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

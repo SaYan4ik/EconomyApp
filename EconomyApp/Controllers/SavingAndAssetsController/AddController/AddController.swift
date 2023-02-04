@@ -47,6 +47,7 @@ class AddController: UIViewController {
                 )
                 
                 RealmManager<SavingsModel>().write(object: savings)
+                navigationController?.popViewController(animated: true)
             case .edit:
                 guard let existSaving else { return }
                 RealmManager<SavingsModel>().update { [weak self] realm in

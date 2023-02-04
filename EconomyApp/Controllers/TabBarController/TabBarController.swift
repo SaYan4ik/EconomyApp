@@ -28,10 +28,13 @@ class TabBarController: UITabBarController {
         let typeVC = TypeSavingController(nibName: "TypeSavingController", bundle: nil)
         let typeNavVC = UINavigationController(rootViewController: typeVC)
         
-        self.viewControllers = [savingNavVC, typeNavVC]
+        let chartVC = ChartController(nibName: "ChartController", bundle: nil)
+        
+        self.viewControllers = [savingNavVC, typeNavVC, chartVC]
         
         savingNavVC.tabBarItem = UITabBarItem(title: "Saving", image: UIImage(systemName: "dollarsign.arrow.circlepath"), tag: 0)
         typeNavVC.tabBarItem = UITabBarItem(title: "Type", image: UIImage(systemName: "book.circle"), tag: 1)
+        chartVC.tabBarItem = UITabBarItem(title: "Chart", image: UIImage(systemName: "chart.pie.fill"), tag: 2)
         
         
         self.tabBar.barTintColor = UIColor(red: 62/255, green: 64/255, blue: 77/255, alpha: 1)

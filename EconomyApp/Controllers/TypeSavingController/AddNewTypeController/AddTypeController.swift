@@ -51,6 +51,7 @@ class AddTypeController: UIViewController {
                 )
                 
                 RealmManager<TypeModel>().write(object: type)
+                navigationController?.popViewController(animated: true)
             case .edit:
                 guard let existType else { return }
                 RealmManager<TypeModel>().update { realm in
