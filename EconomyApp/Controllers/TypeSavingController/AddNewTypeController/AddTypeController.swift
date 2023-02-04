@@ -15,9 +15,12 @@ class AddTypeController: UIViewController {
     @IBOutlet weak var saveButton: UIButton!
     
     private var imagesData = ["Dollar", "Euro", "Ruble", "Peso", "Bitcoin", "Swiss franc", "Metal", "Gem"]
+    private var typeController: TypeControllerEnum = .create
+    private var existType: TypeModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupData()
         self.container.layer.cornerRadius = 12
         self.savingImageView.tintColor = .white
         saveButton.isEnabled = false
@@ -33,12 +36,31 @@ class AddTypeController: UIViewController {
     }
 
     @IBAction func saveAssetsOrSavingButton(_ sender: Any) {
-        guard let nameType = typeOfAssetsOdSavingField.text else { return }
-        guard let image = savingImageView.image else { return }        
-        guard let data = image.pngData() else { return }
+        guard let image = savingImageView.image,
+              let data = image.pngData()
+        else { return }
         
-        let type = TypeModel(type: nameType, image: data)
-        RealmManager<TypeModel>().write(object: type)
+        guard !typeOfAssetsOdSavingField.text.isEmptyOrNil else { return }
+        
+        switch typeController {
+                
+            case .create:
+                let type = TypeModel(
+                    type: typeOfAssetsOdSavingField.text!,
+                    image: data
+                )
+                
+                RealmManager<TypeModel>().write(object: type)
+            case .edit:
+                guard let existType else { return }
+                RealmManager<TypeModel>().update { realm in
+                    try? realm.write {
+                        existType.type = self.typeOfAssetsOdSavingField.text!
+                        existType.image = data
+                    }
+                }
+                navigationController?.popViewController(animated: true)
+        }
     }
     
     private func configureCollection() {
@@ -52,6 +74,27 @@ class AddTypeController: UIViewController {
         let nib = UINib(nibName: TypeCell.id, bundle: nil)
         collectionView.register(nib, forCellWithReuseIdentifier: TypeCell.id)
     }
+    
+    func set(type: TypeControllerEnum, existModel: TypeModel) {
+        self.typeController = type
+        self.existType = existModel
+    }
+    
+    private func setupData() {
+        guard let existType else { return }
+        self.typeOfAssetsOdSavingField.text = existType.type
+        guard let imageNew = existType.image else { return }
+        guard let image : UIImage = UIImage(data: imageNew)?.withRenderingMode(.alwaysTemplate) else { return }
+        self.savingImageView.image = image
+    }
+    
+    private func setExist() {
+        guard existType != nil,
+              typeController == .edit
+        else { return }
+        setupData()
+    }
+    
     
 }
 

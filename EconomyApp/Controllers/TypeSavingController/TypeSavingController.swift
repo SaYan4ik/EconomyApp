@@ -99,8 +99,14 @@ extension TypeSavingController: UICollectionViewDelegateFlowLayout {
             let edit = UIAction(title: "Edit",
                                 image: UIImage(systemName: "square.and.pencil"),
                                 identifier: nil,
-                                discoverabilityTitle: nil, state: .off) { (_) in
+                                discoverabilityTitle: nil, state: .off) { [weak self] (_) in
                             print("edit button clicked")
+                guard let self else { return }
+                let nib = String(describing: AddTypeController.self)
+                let editVC = AddTypeController(nibName: nib, bundle: nil)
+                editVC.set(type: .edit, existModel: self.typeAvalableAssets[indexPath.row])
+                self.navigationController?.pushViewController(editVC, animated: true)
+                
                         }
             
             let delete = UIAction(title: "Delete",
