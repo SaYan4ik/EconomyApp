@@ -9,7 +9,7 @@ import UIKit
 
 class TypeSavingController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
-    
+        
     private var typeAvalableAssets = RealmManager<TypeModel>().read()
     
     override func viewDidLoad() {

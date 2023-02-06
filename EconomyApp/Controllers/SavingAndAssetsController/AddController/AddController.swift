@@ -14,6 +14,8 @@ class AddController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var typeImageView: UIImageView!
     
+    @IBOutlet weak var noDataView: UIView!
+    
     private var allTypeSavings = [TypeModel]()
     private var selectedIndex = IndexPath(row: 0, section: 0)
     private var existSaving: SavingsModel?
@@ -109,7 +111,13 @@ class AddController: UIViewController {
 
 extension AddController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return allTypeSavings.count
+        if allTypeSavings.count == 0 {
+            self.noDataView.isHidden = false
+            return 0
+        } else {
+            self.noDataView.isHidden = true
+            return allTypeSavings.count
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

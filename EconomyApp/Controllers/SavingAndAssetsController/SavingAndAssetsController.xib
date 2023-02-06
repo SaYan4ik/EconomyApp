@@ -11,6 +11,7 @@
             <connections>
                 <outlet property="collectionView" destination="NRb-C2-gJM" id="fdN-ie-gJe"/>
                 <outlet property="indicatorView" destination="t2f-uD-19D" id="2LS-ei-laT"/>
+                <outlet property="noDataView" destination="hoz-Cd-3xN" id="Ujo-Il-Dau"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -39,6 +40,33 @@
                         <constraint firstAttribute="height" constant="50" id="vCp-IJ-lto"/>
                     </constraints>
                 </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hoz-Cd-3xN">
+                    <rect key="frame" x="16" y="63" width="358" height="152"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Here you can save all you deposits and savings" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zmj-4Z-Qkp">
+                            <rect key="frame" x="16" y="15.999999999999996" width="326" height="41.666666666666657"/>
+                            <fontDescription key="fontDescription" name="Charter-Black" family="Charter" pointSize="17"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Now you haven't any savings or depodists. For add somethins tap on &quot;+&quot; button in right corner" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R2F-II-ZpW">
+                            <rect key="frame" x="16" y="73.666666666666657" width="326" height="62.333333333333343"/>
+                            <fontDescription key="fontDescription" name="Charter-Black" family="Charter" pointSize="17"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.077402979799999994" green="0.23893229169999999" blue="0.1178656298" alpha="0.30181601819999998" colorSpace="custom" customColorSpace="displayP3"/>
+                    <constraints>
+                        <constraint firstItem="R2F-II-ZpW" firstAttribute="leading" secondItem="hoz-Cd-3xN" secondAttribute="leading" constant="16" id="4bt-Xp-QDB"/>
+                        <constraint firstItem="Zmj-4Z-Qkp" firstAttribute="leading" secondItem="hoz-Cd-3xN" secondAttribute="leading" constant="16" id="ItO-6g-muL"/>
+                        <constraint firstAttribute="trailing" secondItem="Zmj-4Z-Qkp" secondAttribute="trailing" constant="16" id="gZi-4Z-jAQ"/>
+                        <constraint firstItem="Zmj-4Z-Qkp" firstAttribute="top" secondItem="hoz-Cd-3xN" secondAttribute="top" constant="16" id="m1D-Mx-ypm"/>
+                        <constraint firstAttribute="bottom" secondItem="R2F-II-ZpW" secondAttribute="bottom" constant="16" id="ofV-eS-Flh"/>
+                        <constraint firstAttribute="trailing" secondItem="R2F-II-ZpW" secondAttribute="trailing" constant="16" id="sAF-oU-CAI"/>
+                        <constraint firstItem="R2F-II-ZpW" firstAttribute="top" secondItem="Zmj-4Z-Qkp" secondAttribute="bottom" constant="16" id="vLU-0a-KKq"/>
+                    </constraints>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" red="0.22191728132011562" green="0.47559580180202021" blue="0.32327295551564972" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -46,12 +74,15 @@
                 <constraint firstItem="t2f-uD-19D" firstAttribute="top" secondItem="NRb-C2-gJM" secondAttribute="bottom" id="1Z2-Ns-LoH"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="t2f-uD-19D" secondAttribute="trailing" id="1rv-AG-iyZ"/>
                 <constraint firstItem="t2f-uD-19D" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="413-ZO-VBp"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="hoz-Cd-3xN" secondAttribute="trailing" constant="16" id="Bmo-lk-zCN"/>
                 <constraint firstItem="NRb-C2-gJM" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Gfk-OT-oix"/>
+                <constraint firstItem="hoz-Cd-3xN" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="TGT-nT-mId"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="NRb-C2-gJM" secondAttribute="trailing" id="Wr9-MB-w9W"/>
                 <constraint firstItem="NRb-C2-gJM" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="YS2-aR-UxJ"/>
                 <constraint firstItem="NRb-C2-gJM" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="l0Q-Gc-40W"/>
+                <constraint firstItem="hoz-Cd-3xN" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="16" id="oph-Gn-bHN"/>
             </constraints>
-            <point key="canvasLocation" x="97" y="21"/>
+            <point key="canvasLocation" x="96.92307692307692" y="20.616113744075829"/>
         </view>
     </objects>
 </document>

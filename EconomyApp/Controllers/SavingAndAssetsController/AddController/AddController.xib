@@ -11,6 +11,7 @@
             <connections>
                 <outlet property="collectionView" destination="JPV-SP-gwf" id="q0h-AI-cLC"/>
                 <outlet property="container" destination="Cb3-Yc-mzN" id="LqO-zf-J4B"/>
+                <outlet property="noDataView" destination="o6n-RQ-ae9" id="8Jd-R6-XRX"/>
                 <outlet property="saveButton" destination="VJH-cV-pCF" id="4bE-P3-PJJ"/>
                 <outlet property="savingsAmountField" destination="biA-9o-ZBd" id="g59-V3-LrU"/>
                 <outlet property="typeImageView" destination="hSs-YO-Y2w" id="mMw-rK-5U9"/>
@@ -22,8 +23,8 @@
             <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="JPV-SP-gwf">
-                    <rect key="frame" x="16" y="233" width="358" height="561"/>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="JPV-SP-gwf">
+                    <rect key="frame" x="500" y="233" width="358" height="561"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="3Lo-KO-EhJ">
                         <size key="itemSize" width="128" height="128"/>
@@ -82,17 +83,39 @@
                         <constraint firstItem="7Ig-Jv-74i" firstAttribute="leading" secondItem="Cb3-Yc-mzN" secondAttribute="leading" constant="16" id="ygO-xe-5J6"/>
                     </constraints>
                 </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o6n-RQ-ae9">
+                    <rect key="frame" x="16" y="381.33333333333331" width="358" height="94.333333333333314"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You haven't any type of savings. Please create it in second tab bar section." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oKw-WZ-ASN">
+                            <rect key="frame" x="16" y="16.000000000000004" width="326" height="62.333333333333343"/>
+                            <fontDescription key="fontDescription" name="Charter-Black" family="Charter" pointSize="17"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.077402979799999994" green="0.23893229169999999" blue="0.1178656298" alpha="0.30181601819999998" colorSpace="custom" customColorSpace="displayP3"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="oKw-WZ-ASN" secondAttribute="trailing" constant="16" id="8Fu-Ww-kut"/>
+                        <constraint firstItem="oKw-WZ-ASN" firstAttribute="leading" secondItem="o6n-RQ-ae9" secondAttribute="leading" constant="16" id="I2f-DN-w3F"/>
+                        <constraint firstItem="oKw-WZ-ASN" firstAttribute="top" secondItem="o6n-RQ-ae9" secondAttribute="top" constant="16" id="Yzk-DK-6zd"/>
+                        <constraint firstAttribute="bottom" secondItem="oKw-WZ-ASN" secondAttribute="bottom" constant="16" id="oT6-BE-Plq"/>
+                    </constraints>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" red="0.22191728129999999" green="0.4755958018" blue="0.32327295550000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
             <constraints>
                 <constraint firstItem="Cb3-Yc-mzN" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="0kQ-gd-Wst"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Cb3-Yc-mzN" secondAttribute="trailing" constant="16" id="8kb-WO-Jkh"/>
+                <constraint firstItem="o6n-RQ-ae9" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="I1J-lg-XM1"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="JPV-SP-gwf" secondAttribute="bottom" constant="16" id="M7o-Zr-mBo"/>
                 <constraint firstItem="JPV-SP-gwf" firstAttribute="top" secondItem="Cb3-Yc-mzN" secondAttribute="bottom" constant="16" id="UhP-B0-iBm"/>
                 <constraint firstItem="Cb3-Yc-mzN" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="16" id="Xpy-dn-O8b"/>
+                <constraint firstItem="o6n-RQ-ae9" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="bVQ-zu-DIB"/>
+                <constraint firstItem="o6n-RQ-ae9" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="bha-qA-lbL"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="JPV-SP-gwf" secondAttribute="trailing" constant="16" id="d8D-6w-ffu"/>
                 <constraint firstItem="JPV-SP-gwf" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="dh9-eo-dcL"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="o6n-RQ-ae9" secondAttribute="trailing" constant="16" id="dxb-Sk-oUf"/>
             </constraints>
             <point key="canvasLocation" x="116.92307692307692" y="20.616113744075829"/>
         </view>

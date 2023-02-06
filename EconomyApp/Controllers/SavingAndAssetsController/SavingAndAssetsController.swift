@@ -10,6 +10,7 @@ import UIKit
 class SavingAndAssetsController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var indicatorView: UIView!
+    @IBOutlet weak var noDataView: UIView!
     
     private var allSavings = [SavingsModel]()
     
@@ -24,6 +25,7 @@ class SavingAndAssetsController: UIViewController {
         setupNavBar()
         setupCollection()
         showIndicatorView()
+        self.noDataView.layer.cornerRadius = 12
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -39,8 +41,6 @@ class SavingAndAssetsController: UIViewController {
         self.collectionView.delegate = self
         collectionView.collectionViewLayout = CellCollectionFlowLayout()
         registrationCell()
-
-        
     }
     
     private func registrationCell() {
@@ -64,6 +64,7 @@ class SavingAndAssetsController: UIViewController {
     @objc private func addAction(_ sender: UIButton) {
         let addVC = AddController(nibName: "AddController", bundle: nil)
         navigationController?.pushViewController(addVC, animated: true)
+
     }
     
     private func showIndicatorView() {
@@ -109,7 +110,13 @@ class SavingAndAssetsController: UIViewController {
 
 extension SavingAndAssetsController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return allSavings.count
+        if allSavings.count == 0 {
+            self.noDataView.isHidden = false
+            return 0
+        } else{
+            self.noDataView.isHidden = true
+            return allSavings.count
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

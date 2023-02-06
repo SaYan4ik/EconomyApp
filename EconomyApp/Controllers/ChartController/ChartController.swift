@@ -29,14 +29,6 @@ class ChartController: UIViewController {
     }
     
     private func setupPieView() {
-//        chartView.chartDescription?.enabled = false
-//        chartView.drawHoleEnabled = true
-//        chartView.rotationAngle = 10
-//        chartView.rotationEnabled = true
-//        chartView.isUserInteractionEnabled = true
-//        chartView.chartDescription?.textColor = .white
-//        chartView.chartDescription?.text = "All you savings and deposits"
-//        chartView.holeColor = .clear
         chartView.centerText = "All you savings and deposits"
         
         
